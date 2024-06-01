@@ -22,9 +22,12 @@ class CustomTextContainer extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Text(
-              textContent,
-              textAlign: TextAlign.left,
+            child: Semantics(
+              label: textContent,
+              child: Text(
+                textContent,
+                textAlign: TextAlign.left,
+              ),
             ),
           ),
         ),
@@ -54,12 +57,15 @@ class LaunchUrlContainer extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(textContent),
-                  const Icon(Icons.open_in_new),
-                ],
+              child: Semantics(
+                label: 'Link to the Privacy Policy',
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(textContent),
+                    const Icon(Icons.open_in_new),
+                  ],
+                ),
               ),
             ),
           ),

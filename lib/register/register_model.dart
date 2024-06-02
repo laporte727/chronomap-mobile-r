@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:acorn_client/acorn_client.dart';
 import 'package:chronomap_mobile/register/register_page.dart';
+import 'package:chronomap_mobile/tab.dart';
 import 'package:flutter/material.dart';
 import '../serverpod_client.dart';
 import '../utils/countries_list.dart';
@@ -221,9 +222,9 @@ class RegisterModel extends ChangeNotifier {
             GestureDetector(
               child: const Text('OK'),
               onTap: () {
-                Navigator.push<String>(
+              Navigator.push<String>(
                   context,
-                  MaterialPageRoute(builder: (context) => const RegisterPage()),
+                  MaterialPageRoute(builder: (context) => const TabWidget()),
                 ); // ダイアログを閉じる
               },
             ),

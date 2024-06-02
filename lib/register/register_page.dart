@@ -68,7 +68,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-                    child: TffFormat(
+                    child: NumberFormat(
                       hintText: 'year',
                       onChanged: (value) {
                         model.setNewYearD(value);
@@ -77,7 +77,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-                    child: TffFormat(
+                    child: NumberFormat(
                       hintText: "month 1-12 or 0",
                       onChanged: (value) {
                         model.setNewMonth(value);
@@ -86,7 +86,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-                    child: TffFormat(
+                    child: NumberFormat(
                       hintText: "date 1-31 or 0",
                       onChanged: (value) {
                         model.setNewDay(value);

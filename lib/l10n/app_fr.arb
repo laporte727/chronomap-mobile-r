@@ -29,5 +29,13 @@
   "gameAlertB": "Au moins 5 événements sont nécessaires",
   "gameAlertC": "Ajouter plus d'événements",
   "gameAlertD": "Choisir un autre pays",
-  "cover": "assets/images/cover_fr.png"
+  "cover": "assets/images/cover_fr.png",
+  "registerAlertTitle0": "Réussi",
+  "registerAlertTitle1": "Échec",
+  "registerAlertTitle2": "Échec",
+  "registerAlertTitleD": "Erreur inattendue",
+  "registerAlertContent0": "Merci d'avoir ajouté des informations",
+  "registerAlertContent1": "Oups ! Quelque chose s'est mal passé...",
+  "registerAlertContent2": "Des champs obligatoires sont manquants",
+  "registerAlertContentD": "Veuillez réessayer plus tard"
 }

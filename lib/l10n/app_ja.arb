@@ -29,5 +29,13 @@
   "gameAlertB": "５件以上の事象が必要です",
   "gameAlertC": "事象を追加する",
   "gameAlertD": "別の国を選ぶ",
-  "cover": "assets/images/cover_ja.png"
+  "cover": "assets/images/cover_ja.png",
+  "registerAlertTitle0": "成功しました",
+  "registerAlertTitle1": "失敗しました",
+  "registerAlertTitle2": "失敗しました",
+  "registerAlertTitleD": "予期しないエラー",
+  "registerAlertContent0": "情報を追加していただきありがとうございます",
+  "registerAlertContent1": "おっと！何かがうまくいきませんでした...",
+  "registerAlertContent2": "必要な項目が欠けています",
+  "registerAlertContentD": "後でもう一度お試しください"
 }

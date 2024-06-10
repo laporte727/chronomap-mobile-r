@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:acorn_client/acorn_client.dart';
-import 'package:chronomap_mobile/register/register_page.dart';
 import 'package:chronomap_mobile/tab.dart';
 import 'package:flutter/material.dart';
 import '../serverpod_client.dart';

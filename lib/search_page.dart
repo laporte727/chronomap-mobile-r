@@ -1,6 +1,8 @@
 import 'package:chronomap_mobile/utils/autocomplete_clear.dart';
 import 'package:flutter/material.dart';
 import 'package:acorn_client/acorn_client.dart';
+import 'package:provider/provider.dart';
+import 'data_repository.dart';
 import 'serverpod_client.dart';
 import 'utils/countries_list.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,6 +21,14 @@ class SearchPageState extends State<SearchPage> {
   TextEditingController(); // 検索キーワードを入力するためのController
   //bool selectCountry = false; //
 
+  @override
+  void initState() {
+    super.initState();
+    getOptions();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      fetchJapaneseNamesIfNeeded();
+    });
+  }
 
   Future<void> fetchPrincipalByLocation(String keywords) async {
     try {
@@ -39,6 +49,14 @@ class SearchPageState extends State<SearchPage> {
     }
   }
 
+  //DB多言語化
+  Future<void> fetchJapaneseNamesIfNeeded() async {
+    final dataRepository = Provider.of<DataRepository>(context, listen: false);
+    if (dataRepository.isJapaneseLanguage(context)) {
+      await dataRepository.fetchAllJapaneseNames();
+    }
+  }
+
   void resetSearch() {
     setState(() {
       searchController.clear();
@@ -47,14 +65,15 @@ class SearchPageState extends State<SearchPage> {
     });
   }
 
-  @override
+/*  @override
   void initState() {
     super.initState();
     getOptions();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
+    final dataRepository = Provider.of<DataRepository>(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -85,6 +104,7 @@ class SearchPageState extends State<SearchPage> {
             child: ListView.builder(
               itemCount: listPrincipal.length,
               itemBuilder: (context, index) {
+                final principalId = listPrincipal[index].id;
                 return Card(
                   margin:
                   const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -100,8 +120,14 @@ class SearchPageState extends State<SearchPage> {
                         const SizedBox(
                           height: 4,
                         ),
-                        SelectableText(listPrincipal[index].affair,
-                            style: const TextStyle(fontSize: 16)),
+/*                        SelectableText(listPrincipal[index].affair,
+                            style: const TextStyle(fontSize: 16)),*/
+                        SelectableText(
+                          dataRepository.isJapaneseLanguage(context)
+                              ? dataRepository.getJapaneseName(principalId!)
+                              : listPrincipal[index].affair,
+                          style: const TextStyle(fontSize: 16),
+                        ),
                         const SizedBox(
                           height: 2,
                         ),

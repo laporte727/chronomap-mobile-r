@@ -29,5 +29,13 @@
   "gameAlertB": "At least 5 events are required",
   "gameAlertC": "Add more events",
   "gameAlertD": "Choose another country",
-  "cover": "assets/images/cover_en.png"
+  "cover": "assets/images/cover_en.png",
+  "registerAlertTitle0": "Succeeded",
+  "registerAlertTitle1": "Failed",
+  "registerAlertTitle2": "Failed",
+  "registerAlertTitleD": "Unexpected Error",
+  "registerAlertContent0": "Thank you for adding Information",
+  "registerAlertContent1": "Oops! Something went wrong...",
+  "registerAlertContent2": "Required fields are missing ",
+  "registerAlertContentD": "Please try again later"
 }

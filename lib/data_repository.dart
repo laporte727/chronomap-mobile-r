@@ -9,10 +9,6 @@ class DataRepository with ChangeNotifier {
   Future<void> fetchAllJapaneseNames() async {
     try {
       japaneseList = await client.japanese.getAllJapaneseNames();
-      debugPrint('Japanese List: $japaneseList'); // デバッグ出力
-      if (japaneseList.isEmpty) {
-        debugPrint('Japanese list is empty.');
-      }
     } catch (e) {
       debugPrint('Failed to fetch Japanese names: $e');
     }
@@ -24,7 +20,6 @@ class DataRepository with ChangeNotifier {
           (item) => item.principalId == principalId,
       orElse: () => Japanese(principalId: principalId, japaneseName: 'N/A'),
     );
-    debugPrint('Requested ID: $principalId, Found: ${japanese.japaneseName}'); // デバッグ出力
     return japanese.japaneseName;
   }
 
@@ -34,7 +29,6 @@ class DataRepository with ChangeNotifier {
       debugPrint('AppLocalizations.of(context) returned null');
       return false;
     }
-    debugPrint('Locale: ${locale.localeName}');
     return locale.localeName == 'ja';
   }
 }
